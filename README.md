@@ -1,2 +1,3 @@
 # argocd-config-dev
-ArgoCD config for dev env
+
+ArgoCD config for dev environment.
