@@ -1,0 +1,46 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: simple-k8s-project
+  namespace: argocd
+  # Finalizer that ensures that project is not deleted until it is not referenced by any application
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Project for simple-k8s
+
+  sourceRepos:
+    - https://github.com/Constantin07/argocd-dev.git
+
+  destinations:
+    - namespace: simple-k8s
+      server: https://kubernetes.default.svc
+      name: in-cluster
+
+  # Deny all cluster-scoped resources from being created, except for Namespace
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+
+  # Allow namespaced-scoped resources to be created
+  namespaceResourceWhitelist:
+    - group: apps
+      kind: Deployment
+    - group: apps
+      kind: ReplicaSet
+    - group: ""
+      kind: Pod
+    - group: ""
+      kind: Event
+    - group: ""
+      kind: Service
+    - group: ""
+      kind: ConfigMap
+    - group: batch
+      kind: "*"
+    - group: networking.k8s.io
+      kind: Ingress
+
+  # Enables namespace orphaned resource monitoring
+  orphanedResources:
+    warn: false
