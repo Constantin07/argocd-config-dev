@@ -50,6 +50,8 @@ spec:
       kind: EndpointSlice
     - group: autoscaling
       kind: HorizontalPodAutoscaler
+    - group: networking.k8s.io
+      kind: NetworkPolicy
 
   # Enables namespace orphaned resource monitoring
   orphanedResources:
