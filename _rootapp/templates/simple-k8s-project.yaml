@@ -11,6 +11,8 @@ spec:
 
   sourceRepos:
     - https://github.com/Constantin07/argocd-dev.git
+    # Helm charts
+    - ghcr.io/constantin07/hello-kubernetes-helm/hello-kubernetes
 
   destinations:
     - namespace: simple-k8s
