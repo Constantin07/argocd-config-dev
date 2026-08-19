@@ -40,6 +40,10 @@ spec:
       kind: "*"
     - group: networking.k8s.io
       kind: Ingress
+    - group: ""
+      kind: Endpoints
+    - group: discovery.k8s.io
+      kind: EndpointSlice
 
   # Enables namespace orphaned resource monitoring
   orphanedResources:
