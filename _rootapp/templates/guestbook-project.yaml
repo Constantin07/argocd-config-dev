@@ -26,6 +26,8 @@ spec:
   namespaceResourceWhitelist:
     - group: apps
       kind: Deployment
+    - group: argoproj.io
+      kind: Rollout
     - group: apps
       kind: ReplicaSet
     - group: ""
