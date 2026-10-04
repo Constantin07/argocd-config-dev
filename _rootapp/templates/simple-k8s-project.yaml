@@ -13,7 +13,8 @@ spec:
     - https://github.com/Constantin07/argocd-dev.git
     # Helm charts
     - ghcr.io
-    - 'registry-1.docker.io/*'
+    # Public container registries
+    - '*' 
 
   destinations:
     - namespace: simple-k8s
