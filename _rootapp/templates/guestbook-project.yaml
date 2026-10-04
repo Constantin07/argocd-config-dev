@@ -54,6 +54,8 @@ spec:
       kind: NetworkPolicy
     - group: policy
       kind: PodDisruptionBudget
+    - group: gateway.networking.k8s.io
+      kind: HTTPRoute
 
   # Enables namespace orphaned resource monitoring
   orphanedResources:
