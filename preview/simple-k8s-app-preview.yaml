@@ -36,6 +36,8 @@ spec:
           parameters:
             - name: image.tag
               value: '{{head_sha}}'
+            - name: env.VAULT_SKIP
+              value: true
         #  valueFiles:
         #    - values-preview.yaml
       destination:
