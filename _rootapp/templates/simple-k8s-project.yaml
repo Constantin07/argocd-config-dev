@@ -11,6 +11,7 @@ spec:
 
   sourceRepos:
     - https://github.com/Constantin07/argocd-dev.git
+    - https://github.com/Constantin07/argocd-config-dev.git
     # Helm charts
     - ghcr.io
     # Public container registries
