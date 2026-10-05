@@ -35,16 +35,16 @@ spec:
         helm:
           valuesObject:
             env:
-              VAULT_SKIP: true
+              VAULT_SKIP: "true"
           parameters:
             - name: image.tag
               value: '{{head_sha}}'
             - name: deployment.enabled
-              value: true
+              value: "true"
             - name: rollouts.enabled
-              value: false
+              value: "false"
             - name: hpa.enabled
-              value: true
+              value: "true"
       destination:
         server: https://kubernetes.default.svc
         namespace: simple-k8s
