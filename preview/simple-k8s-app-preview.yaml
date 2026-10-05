@@ -38,6 +38,8 @@ spec:
               value: '{{head_sha}}'
             - name: env.VAULT_SKIP
               value: true
+            - name: deployment.enabled
+              value: true
         #  valueFiles:
         #    - values-preview.yaml
       destination:
