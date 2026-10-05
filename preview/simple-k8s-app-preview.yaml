@@ -20,7 +20,7 @@ spec:
         requeueAfterSeconds: 60
   template:
     metadata:
-      name: 'simple-k8s-app-preview-{{branch_slug}}-{{number}}'
+      name: 'simple-k8s-app-pr-{{number}}'
       labels:
         environment: "dev"
         type: "pr-generated"
