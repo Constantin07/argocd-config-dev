@@ -1,28 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: simple-k8s-app-preview-root
+  name: preview-root
   namespace: argocd
-  labels:
-    environment: dev
   finalizers:
     # The default behaviour is foreground cascading deletion
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: simple-k8s-project
+  project: admin
   source:
     repoURL: 'https://github.com/Constantin07/argocd-config-dev.git'
     path: preview
     targetRevision: main
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: simple-k8s
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
-    managedNamespaceMetadata:
-      labels:
-        app: simple-k8s-app
