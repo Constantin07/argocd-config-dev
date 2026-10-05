@@ -40,6 +40,8 @@ spec:
               value: true
             - name: deployment.enabled
               value: true
+            - name: rollouts.enabled
+              value: false
         #  valueFiles:
         #    - values-preview.yaml
       destination:
