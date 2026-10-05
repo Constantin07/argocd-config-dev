@@ -34,6 +34,8 @@ spec:
         path: pipelines/kubernetes/hello-kubernetes/deploy/hello-kubernetes
         helm:
           valuesObject:
+            rollouts:
+              enabled: "true"
             env:
               VAULT_SKIP: "true"
             httpRoute:
@@ -47,8 +49,6 @@ spec:
               value: "true"
             - name: deployment.enabled
               value: "false"
-            - name: rollouts.enabled
-              value: "true"
       destination:
         server: https://kubernetes.default.svc
         namespace: simple-k8s
