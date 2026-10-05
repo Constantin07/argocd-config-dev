@@ -17,7 +17,7 @@ spec:
           # no tokenRef
           labels:
             - preview
-        requeueAfterSeconds: 180
+        requeueAfterSeconds: 60
   template:
     metadata:
       name: 'simple-k8s-app-preview-{{branch_slug}}-{{number}}'
