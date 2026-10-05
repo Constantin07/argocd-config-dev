@@ -41,8 +41,10 @@ spec:
               value: '{{head_sha}}'
             - name: hpa.enabled
               value: "true"
-            - name: deployment.enable
+            - name: deployment.enabled
               value: "false"
+            - name: rollouts.enabled
+              value: "true"
       destination:
         server: https://kubernetes.default.svc
         namespace: simple-k8s
