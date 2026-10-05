@@ -5,8 +5,6 @@ metadata:
   name: simple-k8s-app-preview
   namespace: argocd
 spec:
-  goTemplate: true
-  goTemplateOptions: ["missingkey=error"]
   generators:
     - pullRequest:
         github:
