@@ -17,7 +17,7 @@ spec:
           # no tokenRef
           labels:
             - preview
-        requeueAfterSeconds: 60
+        requeueAfterSeconds: 120
   template:
     metadata:
       name: 'simple-k8s-app-pr-{{number}}'
@@ -36,6 +36,10 @@ spec:
           valuesObject:
             env:
               VAULT_SKIP: "true"
+            httpRoute:
+              enabled: true
+              hostnames:
+                - 'simple-k8s-app-{{branch_slug}}.internal'
           parameters:
             - name: image.tag
               value: '{{head_sha}}'
