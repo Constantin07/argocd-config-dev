@@ -20,7 +20,7 @@ spec:
         requeueAfterSeconds: 180
   template:
     metadata:
-      name: 'simple-k8s-app-preview-{{number}}'
+      name: 'simple-k8s-app-preview-{{branch_slug}}-{{number}}'
       labels:
         environment: "dev"
         type: "pr-generated"
@@ -46,7 +46,7 @@ spec:
         namespace: simple-k8s
       syncPolicy:
          syncOptions:
-           - CreateNamespace=true
+           - CreateNamespace=false
          automated:
           prune: true
           selfHeal: true
