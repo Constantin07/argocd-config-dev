@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: simple-k8s-app-preview
+  name: simple-k8s-app-preview-root
   namespace: argocd
   labels:
     environment: dev
