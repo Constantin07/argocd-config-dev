@@ -42,8 +42,8 @@ spec:
               value: true
             - name: rollouts.enabled
               value: false
-        #  valueFiles:
-        #    - values-preview.yaml
+            - name: hpa.enabled
+              value: true
       destination:
         server: https://kubernetes.default.svc
         namespace: simple-k8s
