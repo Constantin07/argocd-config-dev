@@ -39,10 +39,6 @@ spec:
           parameters:
             - name: image.tag
               value: '{{head_sha}}'
-            - name: deployment.enabled
-              value: "true"
-            - name: rollouts.enabled
-              value: "false"
             - name: hpa.enabled
               value: "true"
       destination:
