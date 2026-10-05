@@ -11,7 +11,7 @@ metadata:
 spec:
   project: simple-k8s-project
   source:
-    repoURL: 'git@github.com:Constantin07/argocd-config-dev.git'
+    repoURL: 'https://github.com/Constantin07/argocd-config-dev.git'
     path: preview
     targetRevision: main
   destination:
