@@ -16,7 +16,7 @@ spec:
     targetRevision: main
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: simple-k8s-app
+    namespace: simple-k8s
   syncPolicy:
     automated:
       prune: true
