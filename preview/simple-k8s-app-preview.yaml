@@ -33,11 +33,12 @@ spec:
         targetRevision: '{{head_sha}}'
         path: pipelines/kubernetes/hello-kubernetes/deploy/hello-kubernetes
         helm:
+          valuesObject:
+            env:
+              VAULT_SKIP: true
           parameters:
             - name: image.tag
               value: '{{head_sha}}'
-            - name: env.VAULT_SKIP
-              value: true
             - name: deployment.enabled
               value: true
             - name: rollouts.enabled
