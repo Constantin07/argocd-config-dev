@@ -20,7 +20,7 @@ spec:
         requeueAfterSeconds: 180
   template:
     metadata:
-      name: 'simple-k8s-app-{{`{{branch_slug}}`}}-{{`{{number}}`}}'
+      name: 'simple-k8s-app-{{number}}'
       labels:
         environment: "dev"
         type: "pr-generated"
@@ -30,9 +30,10 @@ spec:
       project: simple-k8s-project
       source:
         repoURL: 'https://github.com/Constantin07/simple-k8s-app.git'
-        targetRevision: '{{`{{head_short_sha}}`}}'
+        targetRevision: '{{head_sha}}'
         path: pipelines/kubernetes/hello-kubernetes/deploy/hello-kubernetes
-        # helm:
+        #helm:
+        #  parameters:
         #  valueFiles:
         #    - values-preview.yaml
       destination:
