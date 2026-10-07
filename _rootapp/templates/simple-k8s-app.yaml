@@ -10,13 +10,23 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: simple-k8s-project
+
   source:
     repoURL: 'https://github.com/Constantin07/argocd-dev.git'
     path: simple-k8s-app
     targetRevision: main
+
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: simple-k8s
+
+  ignoreDifferences:
+    - group: gateway.networking.k8s.io
+      kind: HTTPRoute
+      name: hello-kubernetes
+      jqPathExpressions:
+        - .spec.rules[].backendRefs[].weight
+
   syncPolicy:
     automated:
       prune: true
