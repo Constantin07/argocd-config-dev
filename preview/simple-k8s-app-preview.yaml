@@ -52,6 +52,12 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: simple-k8s
+      ignoreDifferences:
+        - group: gateway.networking.k8s.io
+          kind: HTTPRoute
+          name: hello-kubernetes
+          jqPathExpressions:
+            - .spec.rules[].backendRefs[].weight
       syncPolicy:
          syncOptions:
            - CreateNamespace=false
