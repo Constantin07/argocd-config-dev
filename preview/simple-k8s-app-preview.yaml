@@ -55,7 +55,6 @@ spec:
       ignoreDifferences:
         - group: gateway.networking.k8s.io
           kind: HTTPRoute
-          name: hello-kubernetes
           jqPathExpressions:
             - .spec.rules[].backendRefs[].weight
       syncPolicy:
